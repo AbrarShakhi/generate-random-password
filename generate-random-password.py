@@ -6,11 +6,13 @@ lowerCaseList = upperCaseList.lower()
 spcialChars = "!@#$%^&*()_+-=,./<>?;':[]"
 allChars = numberList + upperCaseList + lowerCaseList + spcialChars
 
+passwordLength = int(input("Enter the length of your password => "))
+
+
 def insertCharts(keyStr, chars, passwordLength):
     keyList = []
     for i in range(passwordLength):
         keyList.append(keyStr[i])
-
 
     rand = random.randint(0, passwordLength - 1)
     keyList[rand] = random.choice(chars)
@@ -51,8 +53,6 @@ def main(passwordLength):
     return password
 
 
-
-passwordLength = int(input("Enter the length of your password => "))
 
 if passwordLength > 0 :
     print("Here is the random password for you => " + main(passwordLength))
